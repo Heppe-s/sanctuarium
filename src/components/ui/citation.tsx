@@ -4,7 +4,7 @@ import Typography from "../typograph";
 
 export default function Citation(){
     return(
-    <div className="bg-slate-500 text-slate m-10 w-10/12 h-1/5 bg-center rounded-xl">
+    <div className="bg-slate-500 text-slate mt-8 ml-24 w-10/12 h-1/5 rounded-xl">
         <QuoteIcon className="bg-clip-padding w-16 h-16 m-2 absolute rotate-180" />
         <Typography variant={"h4"} className=" ml-24 pt-10 pr-4 relative">
             O verdadeiro teste não é se você evitará esse fracasso, 
