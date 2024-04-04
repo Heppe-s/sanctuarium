@@ -1,8 +1,9 @@
 import EditorJS from "@editorjs/editorjs";
 import { useEffect, useRef } from "react";
 import { i18n, tools } from "./constants";
+import { cn } from "@/lib/utils";
 
-export default function Editor() {
+export default function Editor({ className }:{className: string}) {
   const editorRef = useRef<EditorJS>();
 
   useEffect(() => {
@@ -23,7 +24,7 @@ export default function Editor() {
   return (
     <>
       <div
-        className="border py-4 w-full min-h-[500px] rounded-md"
+        className={cn("border py-4 w-full min-h-[500px] rounded-md", className)}
         id="Editor"
       />
     </>
