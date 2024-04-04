@@ -1,8 +1,9 @@
 import { ModeToggle } from "@/components/mode-toggle";
 import { Button } from "@/components/ui/button";
 import Citation from "@/components/ui/citation";
-import { DatePickerWithRange } from "@/components/ui/date-ranger-picker";
+import { DatePickerWithRange } from "@/components/ui/date-range-picker";
 import { Input } from "@/components/ui/input";
+import NotesList from "@/components/ui/notes-list";
 import { Search, SquarePlus } from "lucide-react";
 import { Form, Link } from "react-router-dom";
 
@@ -10,8 +11,8 @@ export default function home() {
   return (
     <div>
       <nav>
-        <Citation />
-        <DatePickerWithRange className="absolute mt-6 ml-24 invert" />
+        <Citation className = "ml-auto mr-auto" />
+        <DatePickerWithRange className="absolute mt-6 ml-28" />
         <Input
           id="inputSearch"
           placeholder="Pesquisa"
@@ -19,12 +20,13 @@ export default function home() {
         ></Input>
         <Button 
           id="search" 
-          className="bg-slate-500 rounded-3xl w-44 pl-8 pr-8 relative flex left-3/4 -mt-9"
+          className="bg-slate-900 text-white rounded-3xl w-44 pl-8 pr-8 relative flex ml-auto mr-28 -mt-9"
         >
           <Search className="mr-2" />
           Pesquisar
         </Button>
       </nav>
+      <NotesList />
 
       <Link to="/editor">
         <SquarePlus className="relative float-right mt-8 mr-12 h-10 w-10" />
