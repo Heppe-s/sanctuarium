@@ -5,13 +5,19 @@ import Home from "./pages/home";
 
 const routes = createBrowserRouter([
   {
-    path:"/",
-    element: <Home />,
+    path: "/",
+    element: <Root />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/editor",
+        element: <Editor />,
+      },
+    ],
   },
-  {
-    path:"/editor",
-    element:<Editor />,
-  }
-])
+]);
 
 export default routes;
