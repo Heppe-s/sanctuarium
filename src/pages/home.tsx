@@ -1,12 +1,22 @@
-import { ModeToggle } from "@/components/mode-toggle";
 import { Button } from "@/components/ui/button";
 import Citation from "@/components/ui/citation";
 import { DatePickerWithRange } from "@/components/ui/date-range-picker";
 import { Input } from "@/components/ui/input";
 import NotesList from "@/components/ui/notes-list";
 import { useTitle } from "@/lib/useTitle";
-import { Search, SquarePlus } from "lucide-react";
+import { Plus, Search } from "lucide-react";
 import { Link } from "react-router-dom";
+
+function NewAnnotationButton() {
+  return (
+    <Link
+      to="/editor"
+      className="fixed h-14 w-14 bottom-16 right-16 bg-primary text-secondary rounded-3xl flex justify-center items-center"
+    >
+      <Plus className="stroke-[4px]" />
+    </Link>
+  );
+}
 
 export default function home() {
   useTitle("Sanctuarium");
@@ -30,11 +40,7 @@ export default function home() {
         </Button>
       </nav>
       <NotesList />
-
-      <Link to="/editor">
-        <SquarePlus className="relative float-right mt-8 mr-12 h-10 w-10" />
-      </Link>
-      <ModeToggle />
+      <NewAnnotationButton />
     </div>
   );
 }
