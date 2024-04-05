@@ -1,0 +1,11 @@
+{
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "editor.codeActionsOnSave": [
+    "source.fixAll",
+    "source.fixAll.eslint",
+    "source.organizeImports"
+  ],
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  }
+}
