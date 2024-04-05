@@ -1,10 +1,13 @@
 import "@/globals.css";
 import QuoteIcon from "../quote";
 import Typography from "../typograph";
+import { cn } from "@/lib/utils";
 
-export default function Citation(){
+export default function Citation({
+    className,
+}:{className: string}){
     return(
-    <div className="bg-slate-500 text-slate mt-8 ml-24 w-10/12 h-1/5 rounded-xl">
+    <div className={cn("bg-slate-500 text-white mt-8 w-10/12 h-1/5 rounded-xl",className)}>
         <QuoteIcon className="bg-clip-padding w-16 h-16 m-2 absolute rotate-180" />
         <Typography variant={"h4"} className=" ml-24 pt-10 pr-4 relative">
             O verdadeiro teste não é se você evitará esse fracasso, 
