@@ -17,6 +17,24 @@ function NewAnnotationButton() {
     </Link>
   );
 }
+
+function SearchBar() {
+  return (
+    <div className="w-full flex justify-between space-x-5 py-8">
+      <DatePickerWithRange />
+      <Input
+        id="inputSearch"
+        placeholder="Pesquisa"
+        className="w-2/3 rounded-full"
+      />
+      <Button id="search" className="rounded-full">
+        <Search className="mr-2" />
+        Pesquisar
+      </Button>
+    </div>
+  );
+}
+
 function NotesList() {
   return (
     <div className="bg-slate-500 rounded-2xl w-full h-4/6">
@@ -29,25 +47,13 @@ export default function home() {
   useTitle("Sanctuarium");
 
   return (
-    <div>
-      <nav>
-        <Citation className="ml-auto mr-auto" />
-        <DatePickerWithRange className="absolute mt-6 ml-28" />
-        <Input
-          id="inputSearch"
-          placeholder="Pesquisa"
-          className="relative invert w-5/12 ml-96 mt-6 bg-black rounded-3xl"
-        ></Input>
-        <Button
-          id="search"
-          className="bg-slate-900 text-white rounded-3xl w-44 pl-8 pr-8 relative flex ml-auto mr-28 -mt-9"
-        >
-          <Search className="mr-2" />
-          Pesquisar
-        </Button>
-      </nav>
-      <NotesList />
-      <NewAnnotationButton />
+    <div className="flex flex-col items-center pt-10 h-full w-full">
+      <div className="w-3/4">
+        <Citation />
+        <SearchBar />
+        <NotesList />
+        <NewAnnotationButton />
+      </div>
     </div>
   );
 }
