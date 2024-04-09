@@ -57,4 +57,4 @@ bun run tauri dev
 ## Maintainers
 
 - [Pedro Ryan](https://github.com/pedro-ryan)
-- [Guilherme](https://github.com/Guipeee)
+- [Guilherme Coelho](https://github.com/Guipeee)
