@@ -9,9 +9,5 @@
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
   "cSpell.words": ["Sanctuarium"],
-  "rust-analyzer.linkedProjects": [
-    "src-tauri/Cargo.toml",
-    ".\\src-tauri\\Cargo.toml",
-    ".\\src-tauri\\Cargo.toml"
-  ]
+  "rust-analyzer.linkedProjects": ["src-tauri/Cargo.toml"]
 }
