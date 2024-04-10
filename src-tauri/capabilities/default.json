@@ -16,6 +16,10 @@
     "window:allow-close",
     "window:allow-minimize",
     "window:allow-start-dragging",
-    "window:allow-toggle-maximize"
+    "window:allow-toggle-maximize",
+    "sql:allow-close",
+    "sql:allow-execute",
+    "sql:allow-select",
+    "sql:allow-load"
   ]
 }

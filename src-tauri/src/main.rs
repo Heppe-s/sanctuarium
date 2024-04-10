@@ -3,10 +3,27 @@
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 
+mod db;
+use db::{generate_migrations, DB_URL};
+use serde_json::{json, Value};
+
+#[tauri::command]
+fn get_config() -> Value {
+    json!({
+        "db_url": DB_URL
+    })
+}
 
 fn main() {
+    let migrations = generate_migrations();
+
     tauri::Builder::default()
-        .plugin(tauri_plugin_sql::Builder::default().build())
+        .plugin(
+            tauri_plugin_sql::Builder::default()
+                .add_migrations(DB_URL, migrations)
+                .build(),
+        )
+        .invoke_handler(tauri::generate_handler![get_config])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

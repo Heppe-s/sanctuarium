@@ -1,10 +1,10 @@
-import Database from "@tauri-apps/plugin-sql"
+import { invoke } from "@tauri-apps/api/core";
+import Database from "@tauri-apps/plugin-sql";
+let db: Database;
 
-let db: Database
+export async function init() {
+  if (db) return;
 
-async function init(url: string) {
-  // verifica se a "url" é uma string
-  // verifica se a "url" é começa com "sqlite:"
-  
-  db = new Database(url)
+  const config = await invoke<{ db_url: string }>("get_config");
+  db = await Database.load(config.db_url);
 }

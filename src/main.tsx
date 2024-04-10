@@ -1,9 +1,12 @@
+import { init } from "@/lib/db";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ThemeProvider } from "./components/theme-provides";
 import { RouterProvider } from "react-router-dom";
-import routes from "./routes"
+import { ThemeProvider } from "./components/theme-provides";
 import "./globals.css";
+import routes from "./routes";
+
+init();
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
