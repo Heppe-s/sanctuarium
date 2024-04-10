@@ -50,3 +50,15 @@ export async function createCategory(category: CategoryInfos) {
 
   return true;
 }
+
+export function addCategory(annotationId: number, categoryId: number) {
+  if (!annotationId || !Number.isInteger(annotationId) || annotationId <= 0) {
+    throw new Error("annotationId must be a positive integer");
+  }
+  if (!categoryId || !Number.isInteger(categoryId) || categoryId <= 0) {
+    throw new Error("categoryId must be a positive integer");
+  }
+
+  const query = `INSERT INTO annotations_categories (annotation_id, category_id) VALUES ($1, $2);`;
+  return db.execute(query, [annotationId, categoryId]);
+}
