@@ -1,5 +1,11 @@
 import { invoke } from "@tauri-apps/api/core";
 import Database from "@tauri-apps/plugin-sql";
+
+interface CategoryInfos {
+  name: string;
+  description?: string;
+}
+
 interface AnnotationInfos {
   title: string;
   text?: string;
@@ -30,6 +36,17 @@ export async function createAnnotation(annotation: AnnotationInfos) {
     "INSERT INTO annotations (title, file, text) VALUES ($1, $2, $3)";
 
   await db.execute(query, [title, file, text]);
+
+  return true;
+}
+
+export async function createCategory(category: CategoryInfos) {
+  if (!category?.name) throw new Error("No name has provided to category");
+  const { name, description } = category;
+
+  const query = "INSERT INTO categories (name, description) VALUES ($1, $2)";
+
+  await db.execute(query, [name, description]);
 
   return true;
 }
