@@ -5,6 +5,8 @@
 
 mod db;
 use db::{generate_migrations, DB_URL};
+mod get_verse;
+use get_verse::get_verse;
 use serde_json::{json, Value};
 
 #[tauri::command]
@@ -23,7 +25,7 @@ fn main() {
                 .add_migrations(DB_URL, migrations)
                 .build(),
         )
-        .invoke_handler(tauri::generate_handler![get_config])
+        .invoke_handler(tauri::generate_handler![get_config, get_verse])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
