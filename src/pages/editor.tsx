@@ -1,12 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
+import { createAnnotation } from "@/lib/db";
 import { useTitle } from "@/lib/useTitle";
 import { SquareMinus } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -31,51 +25,13 @@ export default function editor() {
         id="title"
         className=" absolute w-3/4"
       ></Input>
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="outline" className="relative float-right w-1/4">
-            Grupo
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
-          <DropdownMenuItem onClick={() => register("0", false)}>
-            <Checkbox />
-            <label className="ml-2">id0</label>
-          </DropdownMenuItem>
-
-          <DropdownMenuItem onClick={() => register("1", false)}>
-            <Checkbox />
-            <label className="ml-2">id1</label>
-          </DropdownMenuItem>
-
-          <DropdownMenuItem onClick={() => register("2", false)}>
-            <Checkbox />
-            <label className="ml-2">id2</label>
-          </DropdownMenuItem>
-
-          <DropdownMenuItem onClick={() => register(" /notOk/ ", false)}>
-            <Button onClick={() => register(" /Ok/ ", true)}>Confirm</Button>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
       <Editor className="pt-10" />
       <Link to="/">
         <SquareMinus className="relative float-right mt-8 mr-12 h-10 w-10" />
       </Link>
-      <Button className="rounded-3xl m-8 text-base">Save</Button>
+      <Button onClick={() => createAnnotation} className="rounded-3xl m-8 text-base">
+          Save
+      </Button>
     </div>
   );
 }
-
-/*
-const editor: React.FC = () => {
-  return (
-    <div>
-      <h1>Editor</h1>
-      <Editor/>
-    </div>
-  );
-};
-
-export default editor;
-*/

@@ -1,5 +1,5 @@
 // import { ScrollAreaHome } from "@/components/scroll-area-home";
-import { AnnotationPreview } from "@/components/annotation-preview";
+import { AnnotationShow } from "@/components/annotation-show";
 import { Button } from "@/components/ui/button";
 import Citation from "@/components/ui/citation";
 import { DatePickerWithRange } from "@/components/ui/date-range-picker";
@@ -39,7 +39,7 @@ function SearchBar() {
 function NotesList() {
   return (
     <div className="bg-slate-500 rounded-2xl w-full h-4/6 max-h-96 overflow-y-scroll">
-      <AnnotationPreview></AnnotationPreview>
+      <AnnotationShow></AnnotationShow>
     </div>
   );
 }

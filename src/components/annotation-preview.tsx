@@ -43,6 +43,8 @@ function ItemPreview() {
       <Categorie/>
       
       <TextIn />
+
+      <Button className="bg-slate-900 rounded-2xl flex mt-2 ml-auto">Abrir</Button>
     </div>
   );
 }
@@ -50,8 +52,9 @@ function ItemPreview() {
 function TextIn() {
   return (
     <div className="bg-white border-slate-500 border-solid border-2 rounded-2xl flex justify-center ml-auto mr-auto mt-8 h-40">
-
+    
     </div>
+    
   );
 }
 

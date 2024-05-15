@@ -36,6 +36,7 @@ export async function init() {
 }
 
 export async function createAnnotation(annotation: AnnotationInfos) {
+  console.log("Save test!")
   if (!annotation.title) throw new Error("No title has provided to annotation");
   const { title, file, text } = annotation;
 
