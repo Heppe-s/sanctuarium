@@ -1,4 +1,4 @@
-import Categorie from "@/components/categories/format";
+import Categories from "@/components/categories/format";
 import { Button } from "@/components/ui/button";
 import { CollapsibleContent } from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
@@ -40,8 +40,8 @@ function Item({ className }: { className: string }) {
 function ItemPreview() {
   return (
     <div className="w-[10/12] h-full rounded-xl bg-white p-4">
-      <Categorie/>
-      
+      <Categories />
+
       <TextIn />
 
       <Button className="bg-slate-900 rounded-2xl flex mt-2 ml-auto">Abrir</Button>
