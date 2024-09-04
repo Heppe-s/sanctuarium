@@ -13,7 +13,22 @@ interface DailyVerse {
 export default function Citation({ className }: { className?: string }) {
   const { data, isLoading } = useQuery<DailyVerse>({
     queryKey: ["dailyVerse"],
-    queryFn: async () => invoke("get_verse"),
+    queryFn: async () => {
+      let verse: DailyVerse = {
+        title: "",
+        text: "",
+      };
+      try {
+        verse = await invoke("get_verse");
+        localStorage.setItem("dailyVerse", JSON.stringify(verse));
+      } catch (error) {
+        const localVerse = localStorage.getItem("dailyVerse");
+        if (localVerse) {
+          verse = JSON.parse(localVerse);
+        }
+      }
+      return verse;
+    },
   });
 
   return (
@@ -25,7 +40,7 @@ export default function Citation({ className }: { className?: string }) {
     >
       <QuoteIcon className="w-11 h-11 left-4 top-2 absolute rotate-180" />
       {isLoading ? (
-        <div>loading...</div>
+        <div>carregando...</div>
       ) : (
         <>
           <Typography variant="h4" className="">
