@@ -21,7 +21,7 @@ function NewAnnotationButton() {
 
 function SearchBar() {
   return (
-    <div className="w-full flex justify-between space-x-5 py-8">
+    <div className="w-full flex justify-between space-x-5 py-7">
       <DatePickerWithRange />
       <Input
         id="inputSearch"
@@ -38,8 +38,8 @@ function SearchBar() {
 
 function NotesList() {
   return (
-    <div className="bg-slate-500 rounded-2xl w-full h-4/6 max-h-96 overflow-y-scroll">
-      <AnnotationShow></AnnotationShow>
+    <div className="bg-slate-500 rounded-2xl w-full h-4/6 overflow-y-auto">
+      <AnnotationShow />
     </div>
   );
 }
@@ -49,12 +49,12 @@ export default function home() {
 
   return (
     <div className="flex flex-col items-center pt-10 h-full w-full">
-      <div className="w-3/4">
+      <div className="pb-10 w-3/4 h-[inherit]">
         <Citation />
         <SearchBar />
         <NotesList />
-        <NewAnnotationButton />
       </div>
+      <NewAnnotationButton />
     </div>
   );
 }

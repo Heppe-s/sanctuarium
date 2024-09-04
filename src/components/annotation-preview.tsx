@@ -9,30 +9,30 @@ export function AnnotationPreview({ className }: { className?: string }) {
     <Collapsible
       className={cn(
         className,
-        "w-[10/12] rounded-md p-2 lex flex-col justify-between"
+        "w-[10/12] rounded-md flex flex-col justify-between"
       )}
     >
-      <CollapsibleTrigger asChild>
-        <Button className="bg-white text-black w-full relative rounded-full pr-0">
-          Arquivo aqui
-          <div className="border-l-4 border-slate-500 bg-white rounded-r-full h-9 w-1/5 ml-auto flex justify-center items-center cursor-default">
-            <h1 className="text-black text-center">01/01/1999</h1>
-          </div>
-        </Button>
+      <CollapsibleTrigger>
+        <Item />
       </CollapsibleTrigger>
       <CollapsibleContent>
-        <div>
-          <Item className="p-4" />
+        <div className="py-2">
+          <ItemPreview />
         </div>
       </CollapsibleContent>
     </Collapsible>
   );
 }
 
-function Item({ className }: { className: string }) {
+function Item() {
   return (
-    <div className={cn("", className)}>
-      <ItemPreview />
+    <div className="bg-white text-black flex flex-row rounded-lg">
+      <div className="text-left w-4/5 pl-6 pr-0 py-2 text-lg font-bold h-auto">
+        Nome da Anotação
+      </div>
+      <div className="border-l-4 border-slate-500 bg-white rounded-r-lg h-auto w-1/5 ml-auto flex justify-center items-center cursor-default">
+        <h1 className="text-black text-center font-semibold">01/01/1999</h1>
+      </div>
     </div>
   );
 }
@@ -44,17 +44,16 @@ function ItemPreview() {
 
       <TextIn />
 
-      <Button className="bg-slate-900 rounded-2xl flex mt-2 ml-auto">Abrir</Button>
+      <Button className="bg-slate-900 rounded-2xl flex mt-2 ml-auto">
+        Abrir
+      </Button>
     </div>
   );
 }
 
 function TextIn() {
   return (
-    <div className="bg-white border-slate-500 border-solid border-2 rounded-2xl flex justify-center ml-auto mr-auto mt-8 h-40">
-    
-    </div>
-    
+    <div className="bg-white border-slate-500 border-solid border-2 rounded-2xl flex justify-center ml-auto mr-auto mt-8 h-40"></div>
   );
 }
 
