@@ -36,14 +36,6 @@ function SearchBar() {
   );
 }
 
-function NotesList() {
-  return (
-    <div className="bg-slate-500 rounded-2xl w-full h-auto min-h-[50vh]">
-      <AnnotationShow />
-    </div>
-  );
-}
-
 export default function home() {
   useTitle("Sanctuarium");
 
@@ -52,7 +44,7 @@ export default function home() {
       <div className="pb-10 w-3/4 h-[inherit]">
         <Citation />
         <SearchBar />
-        <NotesList />
+        <AnnotationShow />
       </div>
       <NewAnnotationButton />
     </div>
