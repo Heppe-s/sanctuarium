@@ -38,7 +38,7 @@ function SearchBar() {
 
 function NotesList() {
   return (
-    <div className="bg-slate-500 rounded-2xl w-full h-4/6 overflow-y-auto">
+    <div className="bg-slate-500 rounded-2xl w-full h-auto min-h-[50vh]">
       <AnnotationShow />
     </div>
   );
@@ -48,7 +48,7 @@ export default function home() {
   useTitle("Sanctuarium");
 
   return (
-    <div className="flex flex-col items-center pt-10 h-full w-full">
+    <div className="flex flex-col items-center pt-10 h-auto w-full">
       <div className="pb-10 w-3/4 h-[inherit]">
         <Citation />
         <SearchBar />
