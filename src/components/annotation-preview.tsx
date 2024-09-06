@@ -4,6 +4,7 @@ import Categories, {
 } from "@/components/categories/format";
 import { Button } from "@/components/ui/button";
 import { CollapsibleContent } from "@/components/ui/collapsible";
+import Typography from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 import { Collapsible, CollapsibleTrigger } from "@radix-ui/react-collapsible";
 
@@ -45,17 +46,24 @@ function Item() {
 
 function ItemPreview() {
   return (
-    <div className="w-[10/12] h-full rounded-xl bg-white p-4">
-      <div className="flex justify-between">
+    <div className="w-[10/12] h-full rounded-xl bg-white pt-4 pb-2">
+      <div className="flex justify-between px-4">
         <Categories />
         <CreatedAt />
       </div>
 
-      <TextIn />
+      <div className="px-4">
+        <TextIn />
+      </div>
 
-      <Button className="bg-slate-900 rounded-2xl flex mt-2 ml-auto">
-        Abrir
-      </Button>
+      <div className="flex justify-between items-center border-t-2 border-slate-500 mt-4 px-4 pt-1">
+        <Typography variant="p" className="font-light">
+          Ultima edição em 00/00/0000 21:00
+        </Typography>
+        <Button className="bg-slate-900 rounded-2xl flex mt-2 ml-auto w-2/12 text-md">
+          Abrir
+        </Button>
+      </div>
     </div>
   );
 }
