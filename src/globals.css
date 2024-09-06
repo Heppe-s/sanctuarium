@@ -155,9 +155,9 @@ h4.ce-header {
   color: inherit;
 }
 
-::selection {
+/* ::selection {
   background: #000;
-}
+} */
 
 .cdx-settings-button:hover,
 .ce-settings__button:hover,
