@@ -1,9 +1,9 @@
+import { cn } from "@/lib/utils";
 import EditorJS from "@editorjs/editorjs";
 import { useEffect, useRef } from "react";
 import { i18n, tools } from "./constants";
-import { cn } from "@/lib/utils";
 
-export default function Editor({ className }:{className: string}) {
+export default function Editor({ className }: { className?: string }) {
   const editorRef = useRef<EditorJS>();
 
   useEffect(() => {
