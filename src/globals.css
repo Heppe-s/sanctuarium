@@ -75,6 +75,10 @@
   }
 }
 
+html {
+  overflow: hidden;
+}
+
 /* Scroll-bar style */
 
 *::-webkit-scrollbar {
